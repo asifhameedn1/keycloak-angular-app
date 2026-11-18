@@ -1,0 +1,6 @@
+<div class="home" *ngIf="user">
+  <h1>Welcome, {{ user.name || user.username }}</h1>
+  <p>Signed in as <strong>{{ user.username }}</strong><span *ngIf="user.email"> ({{ user.email }})</span></p>
+  <p *ngIf="user.roles.length">Roles: {{ user.roles.join(', ') }}</p>
+  <button type="button" (click)="logout()">Sign out</button>
+</div>
